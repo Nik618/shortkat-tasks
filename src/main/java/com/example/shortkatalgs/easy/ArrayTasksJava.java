@@ -7,8 +7,8 @@ import java.util.*;
 @Service
 public class ArrayTasksJava {
 
-    public void removeDuplicates() {
-        Integer[] nums = {1, 5, 8, 8, 12, 34, 37, 37, 37, 68, 89, 89};
+    public void removeDuplicates(Integer[] nums) {
+
 
         List<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
