@@ -12,7 +12,9 @@ class Processor(
 
     @PostConstruct
     private fun startTasks() {
-        arrayTasksJava.removeDuplicates(arrayOf(1, 5, 8, 8, 12, 34, 37, 37, 37, 68, 89, 89))
+        //arrayTasksJava.removeDuplicates(arrayOf(1, 5, 8, 8, 12, 34, 37, 37, 37, 68, 89, 89))
+        arrayTasksJava.containsDuplicates(arrayOf(1, 5, 8, 8, 12, 34, 37, 37, 37, 68, 89, 89))
+
     }
 
 }
