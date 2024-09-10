@@ -8,8 +8,6 @@ import java.util.*;
 public class ArrayTasksJava {
 
     public void removeDuplicates(Integer[] nums) {
-
-
         List<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (i + 1 == nums.length) {
@@ -25,6 +23,25 @@ public class ArrayTasksJava {
         nums = arrayList.toArray(new Integer[0]);
 
         System.out.println(Arrays.stream(nums).toList() + " " + k);
+    }
+
+    public void findSingleNumber(Integer[] nums) {
+
+        // O(n)
+        // https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/
+        // идея с тестового собеса)
+
+        int sumArray = 0;
+        int sumSet = 0;
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            sumArray += nums[i];
+            if (set.contains(nums[i])) {
+                sumSet += nums[i] * 2;
+            } else
+                set.add(nums[i]);
+        }
+        System.out.println(sumArray - sumSet);
     }
 
 }
