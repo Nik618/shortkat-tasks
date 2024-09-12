@@ -10,17 +10,14 @@ public class ArrayTasksJava {
 
         System.out.println(Arrays.stream(nums).toList());
 
-        int[] temp = new int[k];
         int length = nums.length;
 
-        for (int i = length - k; i < length; i++)
-            temp[i - (length - k)] = nums[i];
-
-        for (int i = length - 1; i >= k; i--)
+        int temp = 0;
+        for (int i = length - 1; i >= k; i--) {
+            temp =
+            nums[-i + length] = nums[-i + k];
             nums[i] = nums[i - k];
-
-        for (int i = 0; i < k; i++)
-            nums[i] = temp[i];
+        }
 
         System.out.println(Arrays.stream(nums).toList() + " " + k);
     }
