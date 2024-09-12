@@ -31,17 +31,17 @@ public class ArrayTasksJava {
         // https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/
         // идея с тестового собеса)
 
-        int sumArray = 0;
-        int sumSet = 0;
+        int repeatingSum = 0;
+        int totalSum = 0;
         Set<Integer> set = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {
-            sumArray += nums[i];
+            repeatingSum += nums[i];
             if (set.contains(nums[i])) {
-                sumSet += nums[i] * 2;
+                totalSum += nums[i] * 2;
             } else
                 set.add(nums[i]);
         }
-        System.out.println(sumArray - sumSet);
+        System.out.println(repeatingSum - totalSum);
     }
 
 }
