@@ -30,18 +30,16 @@ public class ArrayTasksJava {
         // https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/
         // O(n^2)
 
-        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> arrayList1 = Arrays.stream(nums1).toList();
+        List<Integer> arrayList2 = new ArrayList<>(Arrays.stream(nums2).toList());
 
-        for (int i = 0; i < nums1.length; i++) {
-            for (int j = 0; j < nums2.length; j++) {
-                if (Objects.equals(nums1[i], nums2[j])) {
-                    nums2[j] = null;
-                    arrayList.add(nums1[i]);
+        arrayList1.forEach((n) -> {
+                if (arrayList2.contains(n)) {
+                    System.out.print(n + " ");
+                    arrayList2.remove(n);
                 }
             }
-        }
-
-        System.out.println(arrayList);
+        );
     }
 
 }
