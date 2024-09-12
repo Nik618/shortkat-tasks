@@ -13,7 +13,7 @@ class Processor(
     @PostConstruct
     private fun startTasks() {
         // arrayTasksJava.removeDuplicates(arrayOf(1, 5, 8, 8, 12, 34, 37, 37, 37, 68, 89, 89))
-        arrayTasksJava.trading(arrayOf(7,1,5,3,6,4))
+        arrayTasksJava.intersection(arrayOf(1, 2, 4, 5, 5, 7), arrayOf(2, 5, 5))
     }
 
 }

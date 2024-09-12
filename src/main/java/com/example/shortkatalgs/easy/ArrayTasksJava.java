@@ -8,8 +8,6 @@ import java.util.*;
 public class ArrayTasksJava {
 
     public void removeDuplicates(Integer[] nums) {
-
-
         List<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (i + 1 == nums.length) {
@@ -27,18 +25,21 @@ public class ArrayTasksJava {
         System.out.println(Arrays.stream(nums).toList() + " " + k);
     }
 
-    public void trading(Integer[] prices) {
+    public void intersection(Integer[] nums1, Integer[] nums2) {
 
-        // https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/564/
-        // O(n)
+        // https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/
+        // O(n^2)
 
-        int sum = 0;
-        for (int i = 0; i < prices.length - 1; i++) {
-            int difference = prices[i + 1] - prices[i];
-            if (difference > 0)
-                sum += difference;
-        }
-        System.out.println(sum);
+        List<Integer> arrayList1 = Arrays.stream(nums1).toList();
+        List<Integer> arrayList2 = new ArrayList<>(Arrays.stream(nums2).toList());
+
+        arrayList1.forEach((n) -> {
+                if (arrayList2.contains(n)) {
+                    System.out.print(n + " ");
+                    arrayList2.remove(n);
+                }
+            }
+        );
     }
 
 }
