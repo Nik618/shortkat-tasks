@@ -3,6 +3,7 @@ package com.example.shortkatalgs.easy;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ArrayTasksJava {
@@ -32,17 +33,9 @@ public class ArrayTasksJava {
         // можно сначала отсортировать, а потом искать так же, как в первой задаче, но тогда сложность увеличится
         // long[] array = new long[10000000000]; - так тоже не получилось (индекс огромного массива = элементу исходного, внутри счётчик, сложность была бы О(n))
 
-        boolean flag = false;
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> set = Arrays.stream(nums).collect(Collectors.toSet());
 
-        for (Integer num : nums) {
-            if (set.contains(num)) {
-                flag = true;
-                break;
-            } else set.add(num);
-        }
-
-        System.out.println(flag);
+        System.out.println(set.size() < nums.length);
     }
 
 }

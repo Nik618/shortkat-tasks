@@ -1,6 +1,5 @@
 package com.example.shortkatalgs
 
-import com.example.shortkatalgs.easy.ArrayTasks
 import com.example.shortkatalgs.easy.ArrayTasksJava
 import jakarta.annotation.PostConstruct
 import org.springframework.stereotype.Service
