@@ -27,4 +27,18 @@ public class ArrayTasksJava {
         System.out.println(Arrays.stream(nums).toList() + " " + k);
     }
 
+    public void trading(Integer[] prices) {
+
+        // https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/564/
+        // O(n)
+
+        int sum = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            int difference = prices[i + 1] - prices[i];
+            if (difference > 0)
+                sum += difference;
+        }
+        System.out.println(sum);
+    }
+
 }
